@@ -49,7 +49,7 @@
 
 - name: Eclipse | Install Eclipse IDE JEE
   shell: |
-    wget -c https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2018-12/R/eclipse-jee-2018-12-R-linux-gtk-x86_64.tar.gz -O eclipse.tar.gz
+    wget -c http://download.springsource.com/release/STS4/4.1.1.RELEASE/dist/e4.10/spring-tool-suite-4-4.1.1.RELEASE-e4.10.0-linux.gtk.x86_64.tar.gz -O eclipse.tar.gz
     sudo tar -zxvf eclipse.tar.gz -C /opt/
     sudo mv /opt/eclipse*/ /opt/eclipse
     echo -e '[Desktop Entry]\nCategories=Development;IDE;Java;\nComment[pt_BR]=Eclipse Integrated Development Environment\nComment=Eclipse Integrated Development Environment\nExec=/opt/eclipse/eclipse\nGenericName[pt_BR]=\nGenericName=\nIcon=/opt/eclipse/icon.xpm\nMimeType=\nName[pt_BR]=Eclipse\nName=Eclipse\nPath=/opt/eclipse\nStartupNotify=true\nStartupWMClass=Eclipse\nTerminal=false\nTerminalOptions=\nType=Application\nX-DBUS-ServiceName=\nX-DBUS-StartupType=\nX-KDE-SubstituteUID=false\nX-KDE-Username=' | sudo tee ~/.local/share/applications/eclipse.desktop
