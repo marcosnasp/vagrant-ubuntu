@@ -3,5 +3,5 @@
   user: vagrant
 
 roles:
-  - pre-install
+  - pre-install-docker
   - tools
