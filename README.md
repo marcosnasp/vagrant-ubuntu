@@ -1,6 +1,6 @@
-# Criação de Ambiente para Treinamento em Vagrant e Ansible
+# Criação de Ambiente para Treinamento em Vagrant e Shell
 
-Este repositório define o processo de criação automatizada de um ambiente de desenvolvimento usando Vagrant, provisionado com o Ansible.
+Este repositório define o processo de criação automatizada de um ambiente de desenvolvimento usando Vagrant, provisionado com o Shell.
 
 O Ambiente a ser provido é uma máquina com *Ubuntu 18.04 LTS*, com *5 GB de RAM*, e *4 Núcleos* com uso de até *70% de disco*.
 

@@ -4,6 +4,8 @@
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
+require File.join(File.dirname(__FILE__), '../vagrant-shell-scripts/vagrant.rb')
+
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -20,12 +22,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
    # configurating the vm
   config.vm.provider "virtualbox" do |v|
     v.name = "Ubuntu_18.04_LTS"
+    
+    #set the video memory to 64MB:
+    v.customize ["modifyvm", :id, "--vram", "64"]
+    
+    # Enable 3D acceleration:
+    v.customize ["modifyvm", :id, "--accelerate3d", "on"]
+    
     # max 70% CPU cap
     v.customize ["modifyvm", :id, "--cpuexecutioncap", "70"]
+
     # 5 GB
-    v.memory = 5120
-    # cpus (3)
-    v.cpus = 4
+    v.memory = 8192
+
+    # cpus (8)
+    v.cpus = 8
+
     v.gui = true
   end
 
@@ -88,10 +100,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-   config.vm.provision "ansible" do |ansible|
-      ansible.raw_arguments = "-i provisioning/hosts"
-      ansible.playbook = "provisioning/ufma-curso.yml"
-      ansible.verbose = "v"
-      ansible.host_key_checking = false
-   end
+  config.vm.provision :shell do |shell|
+    vagrant_shell_scripts_configure(
+      shell,
+      File.dirname(__FILE__),
+      './provisioning/shell/provision.sh'
+    )
+  end
 end
