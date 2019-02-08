@@ -26,3 +26,17 @@ O Ambiente a ser provido é uma máquina com *Ubuntu 18.04 LTS*, com *5 GB de RA
 15. curl;
 16. gnupg-agent;
 17. software-properties-common.
+
+## Requerimentos para o processo:
+
+1. Clonar este repositório: [https://github.com/marcosnasp/vagrant-curso-ufma] (https://github.com/marcosnasp/vagrant-curso-ufma)
+2. Clonar o repositório localizado em no mesmo nível desse projeto: [https://github.com/marcosnasp/vagrant-shell-scripts](https://github.com/marcosnasp/vagrant-shell-scripts)
+3. Executar esses comandos no diretório raiz do repositório clonado em (1):
+
+```console
+foo@bar: vagrant up
+```
+
+```console
+foo@bar: vagrant up
+```
