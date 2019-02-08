@@ -36,7 +36,3 @@ O Ambiente a ser provido é uma máquina com *Ubuntu 18.04 LTS*, com *5 GB de RA
 ```console
 foo@bar: vagrant up
 ```
-
-```console
-foo@bar: vagrant up
-```
