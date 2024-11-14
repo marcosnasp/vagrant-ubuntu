@@ -17,11 +17,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
-  config.vm.box = "ubuntu/bionic64"
+  config.vm.box = "ubuntu/jammy64"
 
    # configurating the vm
   config.vm.provider "virtualbox" do |v|
-    v.name = "Ubuntu_18.04_LTS"
+    v.name = "Ubuntu_22.04_LTS"
     
     #set the video memory to 64MB:
     v.customize ["modifyvm", :id, "--vram", "64"]
